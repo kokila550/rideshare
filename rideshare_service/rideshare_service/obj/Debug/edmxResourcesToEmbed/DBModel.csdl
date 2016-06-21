@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="rideshareModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="tbl_booking">
+    <Key>
+      <PropertyRef Name="bk_id" />
+    </Key>
+    <Property Name="bk_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="bk_time" Type="DateTime" />
+    <Property Name="bk_status" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="bk_cusid" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="bk_driverid" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="bk_startloc" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="bk_endloc" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="active" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="tbl_customer">
+    <Key>
+      <PropertyRef Name="cusid" />
+    </Key>
+    <Property Name="cusid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="cus_fname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="cus_lname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="cus_phoneno" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="cus_email" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="cus_password" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="active" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tbl_driver">
+    <Key>
+      <PropertyRef Name="dri_id" />
+    </Key>
+    <Property Name="dri_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="dri_fname" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="dri_lname" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="dri_address" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="dri_licence" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="dri_nic" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="dri_password" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="active" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="tbl_vehicle">
+    <Key>
+      <PropertyRef Name="veh_id" />
+    </Key>
+    <Property Name="veh_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="veh_regno" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="veh_type" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="veh_description" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="veh_location" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="veh_driverid" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="veh_custrequest" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="active" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityContainer Name="rideshareDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tbl_booking" EntityType="Self.tbl_booking" />
+    <EntitySet Name="tbl_customer" EntityType="Self.tbl_customer" />
+    <EntitySet Name="tbl_driver" EntityType="Self.tbl_driver" />
+    <EntitySet Name="tbl_vehicle" EntityType="Self.tbl_vehicle" />
+  </EntityContainer>
+</Schema>

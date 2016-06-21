@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="rideshareModel.Store" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.6" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="tbl_booking">
+    <Key>
+      <PropertyRef Name="bk_id" />
+    </Key>
+    <Property Name="bk_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="bk_time" Type="datetime" Precision="0" />
+    <Property Name="bk_status" Type="varchar" MaxLength="45" />
+    <Property Name="bk_cusid" Type="varchar" MaxLength="45" />
+    <Property Name="bk_driverid" Type="varchar" MaxLength="45" />
+    <Property Name="bk_startloc" Type="varchar" MaxLength="45" />
+    <Property Name="bk_endloc" Type="varchar" MaxLength="45" />
+    <Property Name="active" Type="binary" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="tbl_customer">
+    <Key>
+      <PropertyRef Name="cusid" />
+    </Key>
+    <Property Name="cusid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="cus_fname" Type="varchar" MaxLength="100" />
+    <Property Name="cus_lname" Type="varchar" MaxLength="100" />
+    <Property Name="cus_phoneno" Type="varchar" MaxLength="45" />
+    <Property Name="cus_email" Type="varchar" MaxLength="45" />
+    <Property Name="cus_password" Type="varchar" MaxLength="45" />
+    <Property Name="active" Type="char" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="tbl_driver">
+    <Key>
+      <PropertyRef Name="dri_id" />
+    </Key>
+    <Property Name="dri_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="dri_fname" Type="varchar" MaxLength="45" />
+    <Property Name="dri_lname" Type="varchar" MaxLength="45" />
+    <Property Name="dri_address" Type="varchar" MaxLength="100" />
+    <Property Name="dri_licence" Type="varchar" MaxLength="10" />
+    <Property Name="dri_nic" Type="varchar" MaxLength="10" />
+    <Property Name="dri_password" Type="varchar" MaxLength="45" />
+    <Property Name="active" Type="binary" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="tbl_vehicle">
+    <Key>
+      <PropertyRef Name="veh_id" />
+    </Key>
+    <Property Name="veh_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="veh_regno" Type="varchar" MaxLength="45" />
+    <Property Name="veh_type" Type="varchar" MaxLength="45" />
+    <Property Name="veh_description" Type="varchar" MaxLength="45" />
+    <Property Name="veh_location" Type="varchar" MaxLength="45" />
+    <Property Name="veh_driverid" Type="varchar" MaxLength="45" />
+    <Property Name="veh_custrequest" Type="varchar" MaxLength="45" />
+    <Property Name="active" Type="binary" MaxLength="1" />
+  </EntityType>
+  <EntityContainer Name="rideshareModelStoreContainer">
+    <EntitySet Name="tbl_booking" EntityType="Self.tbl_booking" Schema="rideshare" store:Type="Tables" />
+    <EntitySet Name="tbl_customer" EntityType="Self.tbl_customer" Schema="rideshare" store:Type="Tables" />
+    <EntitySet Name="tbl_driver" EntityType="Self.tbl_driver" Schema="rideshare" store:Type="Tables" />
+    <EntitySet Name="tbl_vehicle" EntityType="Self.tbl_vehicle" Schema="rideshare" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

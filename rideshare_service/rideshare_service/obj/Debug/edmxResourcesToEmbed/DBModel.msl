@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="rideshareModelStoreContainer" CdmEntityContainer="rideshareDBEntities">
+    <EntitySetMapping Name="tbl_booking">
+      <EntityTypeMapping TypeName="rideshareModel.tbl_booking">
+        <MappingFragment StoreEntitySet="tbl_booking">
+          <ScalarProperty Name="bk_id" ColumnName="bk_id" />
+          <ScalarProperty Name="bk_time" ColumnName="bk_time" />
+          <ScalarProperty Name="bk_status" ColumnName="bk_status" />
+          <ScalarProperty Name="bk_cusid" ColumnName="bk_cusid" />
+          <ScalarProperty Name="bk_driverid" ColumnName="bk_driverid" />
+          <ScalarProperty Name="bk_startloc" ColumnName="bk_startloc" />
+          <ScalarProperty Name="bk_endloc" ColumnName="bk_endloc" />
+          <ScalarProperty Name="active" ColumnName="active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_customer">
+      <EntityTypeMapping TypeName="rideshareModel.tbl_customer">
+        <MappingFragment StoreEntitySet="tbl_customer">
+          <ScalarProperty Name="cusid" ColumnName="cusid" />
+          <ScalarProperty Name="cus_fname" ColumnName="cus_fname" />
+          <ScalarProperty Name="cus_lname" ColumnName="cus_lname" />
+          <ScalarProperty Name="cus_phoneno" ColumnName="cus_phoneno" />
+          <ScalarProperty Name="cus_email" ColumnName="cus_email" />
+          <ScalarProperty Name="cus_password" ColumnName="cus_password" />
+          <ScalarProperty Name="active" ColumnName="active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_driver">
+      <EntityTypeMapping TypeName="rideshareModel.tbl_driver">
+        <MappingFragment StoreEntitySet="tbl_driver">
+          <ScalarProperty Name="dri_id" ColumnName="dri_id" />
+          <ScalarProperty Name="dri_fname" ColumnName="dri_fname" />
+          <ScalarProperty Name="dri_lname" ColumnName="dri_lname" />
+          <ScalarProperty Name="dri_address" ColumnName="dri_address" />
+          <ScalarProperty Name="dri_licence" ColumnName="dri_licence" />
+          <ScalarProperty Name="dri_nic" ColumnName="dri_nic" />
+          <ScalarProperty Name="dri_password" ColumnName="dri_password" />
+          <ScalarProperty Name="active" ColumnName="active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbl_vehicle">
+      <EntityTypeMapping TypeName="rideshareModel.tbl_vehicle">
+        <MappingFragment StoreEntitySet="tbl_vehicle">
+          <ScalarProperty Name="veh_id" ColumnName="veh_id" />
+          <ScalarProperty Name="veh_regno" ColumnName="veh_regno" />
+          <ScalarProperty Name="veh_type" ColumnName="veh_type" />
+          <ScalarProperty Name="veh_description" ColumnName="veh_description" />
+          <ScalarProperty Name="veh_location" ColumnName="veh_location" />
+          <ScalarProperty Name="veh_driverid" ColumnName="veh_driverid" />
+          <ScalarProperty Name="veh_custrequest" ColumnName="veh_custrequest" />
+          <ScalarProperty Name="active" ColumnName="active" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

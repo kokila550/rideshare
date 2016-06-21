@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="rideshare_service.BindingService" CodeBehind="BindingService.svc.cs" %>
